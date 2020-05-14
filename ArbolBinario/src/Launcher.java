@@ -18,8 +18,8 @@ public class Launcher {
     public static void main(String[] args) {
         // TODO code application logic here
         ArbolBinario ab = new ArbolBinario();
-        ab.eliminar(16);
-
+        ab.buscar(0);
+        //ab.eliminar(16);
         ab.insertar(0);
         ab.insertar(10);
         ab.insertar(15);
@@ -32,7 +32,24 @@ public class Launcher {
         ab.buscar(15);
         ab.buscar(16);
         ab.eliminar(10);
+        ab.eliminar(5);
+        ab.eliminar(3);
+        
+        /*
+        System.out.println("dato buscado: "+ab.buscar(5));
+        
+        System.out.println("esta es la cabeza: "+ab.cabeza.info);
+        ab.eliminar(0);
+        System.out.println("esta es la cabeza: "+ab.cabeza.info);
+        System.out.println("esta es la izquierda: "+ab.cabeza.izq.info);
+        */
+        
+        
          
+        
+        
+        
+        
     }
 
 }

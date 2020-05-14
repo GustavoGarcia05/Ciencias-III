@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author Jess
@@ -62,7 +64,9 @@ public class ArbolBinario {
 
     public Nodo buscar(int dato) {
         Nodo anterior = ubicarLugar(dato);
-
+        if (anterior == null) {
+            return cabeza;
+        }
         if (cabeza == null) {
             return null;
         } else if (anterior.izq != null && anterior.izq.info == dato) {
@@ -76,35 +80,108 @@ public class ArbolBinario {
 
     public void eliminar(int dato) {
         Nodo actual = buscar(dato);
-        Nodo anterior;
-        if (actual != null) {
-            if (actual.izq == null && actual.der == null) {
-                eliminarHoja(dato);
-            }
-            if (actual.izq != null ^ actual.der != null) {
-                eliminarUnaHoja(dato);
+        Nodo anterior = ubicarLugar(dato);
 
-            }
-            if (actual.izq != null && actual.der != null) {
-                eliminarDosHojas(dato);
+        if (actual != cabeza) {
+            if (actual != null) {
+                if (actual.izq == null && actual.der == null) {
+                    eliminarHoja(dato, actual, anterior);
+                }
+                if (actual.izq != null ^ actual.der != null) {
+                    eliminarUnaHoja(dato, actual, anterior);
 
+                }
+                if (actual.izq != null && actual.der != null) {
+                    eliminarDosHojas(dato, actual, anterior);
+                }
+            } else {
+                System.out.println("El dato no existe en el arbol");
             }
         } else {
-            System.out.println("El dato no existe en el arbol");
+            eliminarRaiz();
+            System.out.println("se esta borrando la raiz");
         }
 
     }
 
-    public void eliminarHoja(int dato, Nodo actual) {
-        Nodo anterior = ubicarLugar(dato);
+    private void eliminarRaiz() {
+        if (cabeza.izq == null && cabeza.der == null) {
+            cabeza = null;
+        } else if (cabeza.izq != null ^ cabeza.der != null) {
+            if (cabeza.izq != null) {
+                cabeza = cabeza.izq;
+            } else {
+                cabeza = cabeza.der;
+
+            }
+        } else {
+            Nodo antTtemp = cabeza;
+            Nodo temp = cabeza.izq;
+
+            while (temp.der != null) {
+                antTtemp = temp;
+                temp = temp.der;
+            }
+
+            antTtemp.izq = temp.izq;
+            antTtemp.der = temp.der;
+
+            temp.izq = cabeza.izq;
+            temp.der = cabeza.der;
+
+            cabeza = temp;
+        }
     }
 
-    public void eliminarUnaHoja(int dato) {
+    private void eliminarHoja(int dato, Nodo actual, Nodo anterior) {
+
+        if (anterior.izq == actual) {
+            anterior.izq = null;
+        } else {
+            anterior.der = null;
+        }
+        System.out.println("Primer eliminar");
+
+    }
+
+    private void eliminarUnaHoja(int dato, Nodo actual, Nodo anterior) {
+        if (anterior.izq == actual) {
+            if (actual.izq != null) {
+                anterior.izq = actual.izq;
+            } else {
+                anterior.izq = actual.der;
+            }
+        } else {
+            if (actual.izq != null) {
+                anterior.der = actual.izq;
+            } else {
+                anterior.der = actual.der;
+            }
+        }
         System.out.println("segundo eliminar");
     }
 
-    public void eliminarDosHojas(int dato) {
-        System.out.println("tercer eliminar");
+    private void eliminarDosHojas(int dato, Nodo actual, Nodo anterior) {
+        Nodo AnteriorTemporal = actual;
+        Nodo temporal = actual.izq;
+
+        while (temporal.der != null) {
+            AnteriorTemporal = temporal;
+            temporal = temporal.der;
+        }
+
+        AnteriorTemporal.izq = temporal.izq;
+        AnteriorTemporal.der = temporal.der;
+
+        temporal.izq = actual.izq;
+        temporal.der = actual.der;
+
+        if (anterior.izq == actual) {
+            anterior.izq = temporal;
+        } else {
+            anterior.der = temporal;
+        }
+        System.out.println("tercer eliminar: " + actual.info);
     }
 
 }
