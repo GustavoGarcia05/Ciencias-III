@@ -29,20 +29,16 @@ public class Launcher {
         ab.insertar(12);
         ab.insertar(18);
         ab.insertar(15);
-        ab.buscar(15);
-        ab.buscar(16);
-        ab.eliminar(10);
-        ab.eliminar(5);
-        ab.eliminar(3);
         
-        /*
-        System.out.println("dato buscado: "+ab.buscar(5));
+        System.out.println("dato buscado: "+ab.buscar(3));
         
         System.out.println("esta es la cabeza: "+ab.cabeza.info);
         ab.eliminar(0);
         System.out.println("esta es la cabeza: "+ab.cabeza.info);
-        System.out.println("esta es la izquierda: "+ab.cabeza.izq.info);
-        */
+        System.out.println("esta es la izquierda: "+ab.cabeza.izq);
+   
+        
+        
         
         
          

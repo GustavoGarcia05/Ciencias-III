@@ -5,8 +5,6 @@
  */
 package Modelo;
 
-import java.awt.BorderLayout;
-
 /**
  *
  * @author Jess
