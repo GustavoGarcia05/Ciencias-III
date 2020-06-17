@@ -32,8 +32,192 @@ espacio=[ ,\t,\r]+
 /* Palabra reservada If */
 ( if ) {lexemas=yytext(); return If;}
 
+
 /* Palabra reservada Else */
 ( else ) {lexemas=yytext(); return Else;}
+
+/* Palabra reservada Abstract */
+( abstract ) {lexemas=yytext(); return Abstract;}
+
+/* Palabra reservada As */
+( as ) {lexemas=yytext(); return As;}
+
+/* Palabra reservada Base */
+( base ) {lexemas=yytext(); return Base;}
+
+/* Palabra reservada Catch */
+( catch ) {lexemas=yytext(); return Catch;}
+
+/* Palabra reservada Checked */
+( checked ) {lexemas=yytext(); return Checked;}
+
+/* Palabra reservada Class */
+( class ) {lexemas=yytext(); return Class;}
+
+/* Palabra reservada Const */
+( const ) {lexemas=yytext(); return Const;}
+
+/* Palabra reservada Decimal */
+( decimal ) {lexemas=yytext(); return Decimal;}
+
+/* Palabra reservada Decimal */
+( decimal ) {lexemas=yytext(); return Decimal;}
+
+/* Palabra reservada Delegate */
+( delegate ) {lexemas=yytext(); return Delegate;}
+
+/* Palabra reservada Enum */
+( enum ) {lexemas=yytext(); return Enum;}
+
+/* Palabra reservada Event */
+( event ) {lexemas=yytext(); return Event;}
+
+/* Palabra reservada Explicit */
+( explicit ) {lexemas=yytext(); return Explicit;}
+
+/* Palabra reservada Extern */
+( extern ) {lexemas=yytext(); return Extern;}
+
+/* Palabra reservada Finally */
+( finally ) {lexemas=yytext(); return Finally;}
+
+
+/* Palabra reservada  Bool*/
+( bool ) {lexemas=yytext(); return Bool;}
+
+/* Palabra reservada  False*/
+( false ) {lexemas=yytext(); return False;}
+
+/* Palabra reservada  True*/
+( true ) {lexemas=yytext(); return True;}
+
+/* Palabra reservada  Fixed*/
+( fixed ) {lexemas=yytext(); return Fixed;}
+
+/* Palabra reservada  Foreach*/
+( foreach ) {lexemas=yytext(); return Foreach;}
+
+/* Palabra reservada  Goto*/
+( goto ) {lexemas=yytext(); return Goto;}
+
+/* Palabra reservada  Implicit*/
+( implicit ) {lexemas=yytext(); return Implicit;}
+
+/* Palabra reservada  In*/
+( in ) {lexemas=yytext(); return In;}
+
+/* Palabra reservada  Interface*/
+( interface ) {lexemas=yytext(); return Interface;}
+
+/* Palabra reservada  Internal*/
+( internal ) {lexemas=yytext(); return Internal;}
+
+/* Palabra reservada  Is*/
+( is ) {lexemas=yytext(); return Is;}
+
+/* Palabra reservada  Lock*/
+( lock ) {lexemas=yytext(); return Lock;}
+
+/* Palabra reservada  Namespace*/
+( namespace ) {lexemas=yytext(); return Namespace;}
+
+/* Palabra reservada  New*/
+( new ) {lexemas=yytext(); return New;}
+
+/* Palabra reservada  Null*/
+( null ) {lexemas=yytext(); return Null;}
+
+/* Palabra reservada  Object*/
+( object ) {lexemas=yytext(); return Object;}
+
+/* Palabra reservada  Operator*/
+( operator ) {lexemas=yytext(); return Operator;}
+
+/* Palabra reservada  Out*/
+( out ) {lexemas=yytext(); return Out;}
+
+/* Palabra reservada  Override*/
+( override ) {lexemas=yytext(); return Override;}
+
+/* Palabra reservada  Params*/
+( params ) {lexemas=yytext(); return Params;}
+
+/* Palabra reservada  Private*/
+( private ) {lexemas=yytext(); return Private;}
+
+/* Palabra reservada  Protected*/
+( protected ) {lexemas=yytext(); return Protected;}
+
+/* Palabra reservada  Public*/
+( public ) {lexemas=yytext(); return Public;}
+
+/* Palabra reservada  Readonly*/
+( readonly ) {lexemas=yytext(); return Readonly;}
+
+/* Palabra reservada  Ref*/
+( ref ) {lexemas=yytext(); return Ref;}
+
+/* Palabra reservada  Return*/
+( return ) {lexemas=yytext(); return Return;}
+
+/* Palabra reservada  Sbyte*/
+( sbyte ) {lexemas=yytext(); return Sbyte;}
+
+/* Palabra reservada  Sealed*/
+( sealed ) {lexemas=yytext(); return Sealed;}
+
+/* Palabra reservada  Sizeof*/
+( sizeof ) {lexemas=yytext(); return Sizeof;}
+
+/* Palabra reservada  Stackalloc*/
+( stackalloc ) {lexemas=yytext(); return Stackalloc;}
+
+/* Palabra reservada  Statict*/
+( statict ) {lexemas=yytext(); return Statict;}
+
+/* Palabra reservada  Struct*/
+( struct ) {lexemas=yytext(); return Struct;}
+
+/* Palabra reservada  This*/
+( this ) {lexemas=yytext(); return This;}
+
+/* Palabra reservada  Throw*/
+( throw ) {lexemas=yytext(); return Throw;}
+
+/* Palabra reservada  Try*/
+( try ) {lexemas=yytext(); return Try;}
+
+/* Palabra reservada  Typeof*/
+( typeof ) {lexemas=yytext(); return Typeof;}
+
+/* Palabra reservada  Uint*/
+( uint ) {lexemas=yytext(); return Uint;}
+
+/* Palabra reservada  Ulong*/
+( ulong ) {lexemas=yytext(); return Ulong;}
+
+/* Palabra reservada  Unchecked*/
+( unchecked ) {lexemas=yytext(); return Unchecked;}
+
+/* Palabra reservada  Unsafe*/
+( unsafe ) {lexemas=yytext(); return Unsafe;}
+
+/* Palabra reservada  Ushort*/
+( ushort ) {lexemas=yytext(); return Ushort;}
+
+/* Palabra reservada  Using*/
+( using ) {lexemas=yytext(); return Using;}
+
+/* Palabra reservada  Virtual*/
+( virtual ) {lexemas=yytext(); return Virtual;}
+
+/* Palabra reservada  Volatile*/
+( volatile ) {lexemas=yytext(); return Volatile;}
+
+/* Palabra reservada  Void*/
+( void ) {lexemas=yytext(); return Void;}
+
+
 
 /* Palabra reservada Switch */
 ( switch ) {lexemas=yytext(); return Switch;}
@@ -116,12 +300,11 @@ espacio=[ ,\t,\r]+
 /* Punto */
 ( "." ) {lexemas=yytext(); return Punto;}
 
+/* Numero */
+("(-"{D}+")")|{D}+ {lexemas=yytext(); return Numero;}
 
 /* Identificador */
 {L}({L}|{D})* {lexemas=yytext(); return Identificador;}
-
-/* Numero */
-("(-"{D}+")")|{D}+ {lexemas=yytext(); return Numero;}
 
 /* Error de analisis */
  . {return ERROR;}
