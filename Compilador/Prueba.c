@@ -1,6 +1,17 @@
-boolean = true;
-switch;
-case;
-break;
-continue;
-else;
+"arbol sintactico"
+abstract,
+    as,
+    base,
+    catch,
+    checked,
+    class, 
+    const,
+    decimal,
+    default,
+    delegate,
+    enum,
+    event,
+    explicit,
+    extern, 
+    finally,
+else
