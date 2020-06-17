@@ -1,0 +1,84 @@
+/* Palaba resevada Out */
+( out ) {lexemas=yytext(); return Out;}
+
+/* Palaba resevada Override */
+( override ) {lexemas=yytext(); return Override;}
+
+/* Palaba resevada Params */
+( params ) {lexemas=yytext(); return Params;}
+
+/* Palaba resevada Private */
+( private ) {lexemas=yytext(); return Private;}
+
+/* Palaba resevada Protected */
+( protected ) {lexemas=yytext(); return Protected;}
+
+/* Palaba resevada Public */
+( public ) {lexemas=yytext(); return Public;}
+
+/* Palaba resevada Readonly */
+( readonly ) {lexemas=yytext(); return Readonly;}
+
+/* Palaba resevada Ref */
+( ref ) {lexemas=yytext(); return Ref;}
+
+/* Palaba resevada Return */
+( return ) {lexemas=yytext(); return Return;}
+
+/* Palaba resevada Sbyte */
+( sbyte ) {lexemas=yytext(); return Sbyte;}
+
+/* Palaba resevada Sealed */
+( sealed ) {lexemas=yytext(); return Sealed;}
+
+/* Palaba resevada Sizeof */
+( sizeof ) {lexemas=yytext(); return Sizeof;}
+
+/* Palaba resevada Stackalloc */
+( stackalloc ) {lexemas=yytext(); return Stackalloc;}
+
+/* Palaba resevada Statict */
+( statict ) {lexemas=yytext(); return Statict;}
+
+/* Palaba resevada Struct */
+( struct ) {lexemas=yytext(); return Struct;}
+
+/* Palaba resevada This */
+( this ) {lexemas=yytext(); return This;}
+
+/* Palaba resevada Throw */
+( throw ) {lexemas=yytext(); return Throw;}
+
+/* Palaba resevada Try */
+( try ) {lexemas=yytext(); return Try;}
+
+/* Palaba resevada Typeof */
+( typeof ) {lexemas=yytext(); return Typeof;}
+
+/* Palaba resevada Uint */
+( uint ) {lexemas=yytext(); return Uint;}
+
+/* Palaba resevada Ulong */
+( ulong ) {lexemas=yytext(); return Ulong;}
+
+/* Palaba resevada Unchecked */
+( unchecked ) {lexemas=yytext(); return Unchecked;}
+
+/* Palaba resevada Unsafe */
+( unsafe ) {lexemas=yytext(); return Unsafe;}
+
+/* Palaba resevada Ushort */
+( ushort ) {lexemas=yytext(); return Ushort;}
+
+/* Palaba resevada Using */
+( using ) {lexemas=yytext(); return Using;}
+
+/* Palaba resevada Virtual */
+( virtual ) {lexemas=yytext(); return Virtual;}
+
+/* Palaba resevada Volatile */
+( volatile ) {lexemas=yytext(); return Volatile;}
+
+/* Palaba resevada Void */
+( void ) {lexemas=yytext(); return Void;}
+

@@ -1,0 +1,84 @@
+case Out:
+resultado += " <Reservada out>\t" + lexicos.lexemas + "\n";
+break;
+case Override:
+resultado += " <Reservada override>\t" + lexicos.lexemas + "\n";
+break;
+case Params:
+resultado += " <Reservada params>\t" + lexicos.lexemas + "\n";
+break;
+case Private:
+resultado += " <Reservada private>\t" + lexicos.lexemas + "\n";
+break;
+case Protected:
+resultado += " <Reservada protected>\t" + lexicos.lexemas + "\n";
+break;
+case Public:
+resultado += " <Reservada public>\t" + lexicos.lexemas + "\n";
+break;
+case Readonly:
+resultado += " <Reservada readonly>\t" + lexicos.lexemas + "\n";
+break;
+case Ref:
+resultado += " <Reservada ref>\t" + lexicos.lexemas + "\n";
+break;
+case Return:
+resultado += " <Reservada return>\t" + lexicos.lexemas + "\n";
+break;
+case Sbyte:
+resultado += " <Reservada sbyte>\t" + lexicos.lexemas + "\n";
+break;
+case Sealed:
+resultado += " <Reservada sealed>\t" + lexicos.lexemas + "\n";
+break;
+case Sizeof:
+resultado += " <Reservada sizeof>\t" + lexicos.lexemas + "\n";
+break;
+case Stackalloc:
+resultado += " <Reservada stackalloc>\t" + lexicos.lexemas + "\n";
+break;
+case Statict:
+resultado += " <Reservada statict>\t" + lexicos.lexemas + "\n";
+break;
+case Struct:
+resultado += " <Reservada struct>\t" + lexicos.lexemas + "\n";
+break;
+case This:
+resultado += " <Reservada this>\t" + lexicos.lexemas + "\n";
+break;
+case Throw:
+resultado += " <Reservada throw>\t" + lexicos.lexemas + "\n";
+break;
+case Try:
+resultado += " <Reservada try>\t" + lexicos.lexemas + "\n";
+break;
+case Typeof:
+resultado += " <Reservada typeof>\t" + lexicos.lexemas + "\n";
+break;
+case Uint:
+resultado += " <Reservada uint>\t" + lexicos.lexemas + "\n";
+break;
+case Ulong:
+resultado += " <Reservada ulong>\t" + lexicos.lexemas + "\n";
+break;
+case Unchecked:
+resultado += " <Reservada unchecked>\t" + lexicos.lexemas + "\n";
+break;
+case Unsafe:
+resultado += " <Reservada unsafe>\t" + lexicos.lexemas + "\n";
+break;
+case Ushort:
+resultado += " <Reservada ushort>\t" + lexicos.lexemas + "\n";
+break;
+case Using:
+resultado += " <Reservada using>\t" + lexicos.lexemas + "\n";
+break;
+case Virtual:
+resultado += " <Reservada virtual>\t" + lexicos.lexemas + "\n";
+break;
+case Volatile:
+resultado += " <Reservada volatile>\t" + lexicos.lexemas + "\n";
+break;
+case Void:
+resultado += " <Reservada void>\t" + lexicos.lexemas + "\n";
+break;
