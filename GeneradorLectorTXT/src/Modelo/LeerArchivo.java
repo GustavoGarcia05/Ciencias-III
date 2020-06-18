@@ -14,7 +14,7 @@ import java.io.FileReader;
  */
 public class LeerArchivo {
 
-    private String[] palabrasSepardas;
+    protected String[] palabrasSepardas;
 
     public LeerArchivo(String rutaArchivo) {
         separarPorComa(leerString(rutaArchivo));
@@ -51,7 +51,7 @@ public class LeerArchivo {
         return texto;
     }
 
-    private String[] separarPorComa(String texto) {
+    protected String[] separarPorComa(String texto) {
         if (texto == null) {
             System.out.println("no existen textos ");
             return null;

@@ -1,0 +1,15 @@
+case Y_Logico:
+resultado += "  <Operador logico y_logico>\t" + lexicos.lexemas + "\n";
+break;
+case O_Logico:
+resultado += "  <Operador logico o_logico>\t" + lexicos.lexemas + "\n";
+break;
+case Negacion:
+resultado += "  <Operador logico negacion>\t" + lexicos.lexemas + "\n";
+break;
+case Y_Logico_Bit:
+resultado += "  <Operador logico y_logico_bit>\t" + lexicos.lexemas + "\n";
+break;
+case O_Logico_Bit:
+resultado += "  <Operador logico o_logico_bit>\t" + lexicos.lexemas + "\n";
+break;

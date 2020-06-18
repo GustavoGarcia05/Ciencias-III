@@ -255,8 +255,24 @@ espacio=[ ,\t,\r]+
 /* Operador Division */
 ( "/" ) {lexemas=yytext(); return Division;}
 
-/* Operadores logicos */
-( "&&" | "||" | "!" | "&" | "|" ) {lexemas=yytext(); return Op_logico;}
+
+
+/* Operador Y_Logico */
+( "&&" ) {lexemas=yytext(); return Y_Logico;}
+
+
+
+/* Operador logico O_Logico */
+( "||" ) {lexemas=yytext(); return O_Logico;}
+
+/* Operador logico Negacion */
+( "!" ) {lexemas=yytext(); return Negacion;}
+
+/* Operador logico Y_Logico_Bit */
+( "&" ) {lexemas=yytext(); return Y_Logico_Bit;}
+
+/* Operador logico O_Logico_Bit */
+( "|" ) {lexemas=yytext(); return O_Logico_Bit;}
 
 /*Operadores Relacionales */
 ( ">" | "<" | "==" | "!=" | ">=" | "<=" | "<<" | ">>" ) {lexemas = yytext(); return Op_relacional;}

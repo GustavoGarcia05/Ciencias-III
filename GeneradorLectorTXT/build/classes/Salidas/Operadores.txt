@@ -1,0 +1,5 @@
+&&,Y_Logico 
+||,O_Logico 
+!,Negacion 
+&,Y_Logico_Bit 
+|,O_Logico_Bit 

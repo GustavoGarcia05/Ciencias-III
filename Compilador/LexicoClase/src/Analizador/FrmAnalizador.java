@@ -5,19 +5,13 @@
  */
 package Analizador;
 
-import java.awt.Color;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java_cup.runtime.Symbol;
 import javax.swing.JFileChooser;
 
 /**
@@ -372,8 +366,20 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case Division:
                     resultado += "  <Operador division>\t" + lexicos.lexemas + "\n";
                     break;
-                case Op_logico:
-                    resultado += "  <Operador logico>\t" + lexicos.lexemas + "\n";
+                case Y_Logico:
+                    resultado += "  <Operador logico y_logico>\t" + lexicos.lexemas + "\n";
+                    break;
+                case O_Logico:
+                    resultado += "  <Operador logico o_logico>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Negacion:
+                    resultado += "  <Operador logico negacion>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Y_Logico_Bit:
+                    resultado += "  <Operador logico y_logico_bit>\t" + lexicos.lexemas + "\n";
+                    break;
+                case O_Logico_Bit:
+                    resultado += "  <Operador logico o_logico_bit>\t" + lexicos.lexemas + "\n";
                     break;
                 case Op_incremento:
                     resultado += "  <Operador incremento>\t" + lexicos.lexemas + "\n";

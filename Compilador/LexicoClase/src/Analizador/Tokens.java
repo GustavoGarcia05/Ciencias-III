@@ -22,7 +22,7 @@ public enum Tokens {
     Base,
     Catch,
     Checked,
-    Class, 
+    Class,
     Const,
     Decimal,
     Default,
@@ -30,12 +30,11 @@ public enum Tokens {
     Enum,
     Event,
     Explicit,
-    Extern, 
+    Extern,
     Finally,
     Bool,
     False,
     True,
-    
     Fixed,
     Foreach,
     Goto,
@@ -50,7 +49,6 @@ public enum Tokens {
     Null,
     Object,
     Operator,
-//
     Out,
     Override,
     Params,
@@ -79,8 +77,7 @@ public enum Tokens {
     Virtual,
     Volatile,
     Void,
-    
-//
+    //
     Switch,
     Case,
     Break,
@@ -93,6 +90,12 @@ public enum Tokens {
     Resta,
     Multiplicacion,
     Division,
+    Y_Logico,
+    O_Logico,
+    Negacion,
+    Y_Logico_Bit,
+    O_Logico_Bit,
+    
     Op_logico,
     Op_incremento,
     Op_relacional,

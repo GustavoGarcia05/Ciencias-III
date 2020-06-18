@@ -8,19 +8,28 @@ package Modelo;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import javafx.util.Pair;
 
 /**
  *
  * @author Gustavo
  */
-public class CrearArchivo {
+public class CrearArchivoOperadoresLex {
 
     protected String contenido;
     protected String[] conte;
 
-    public CrearArchivo(String nombre, String[] texto) {
+    public CrearArchivoOperadoresLex(String nombre, String[] texto) {
         try {
-
+            /*
+        Pair<String,String> operadores = new Pair<String,String>("#", "numeral");
+        Pair<String,String> operadores2 = new Pair<String,String>("%", "porcentage");
+        
+        ArrayList<Pair> arreglo= new ArrayList<Pair>();
+        arreglo.add(operadores);
+        arreglo.add(operadores2);
+             */
             String ruta = escribirRuta(nombre);
             contenido = "";
             if (texto == null) {
@@ -48,15 +57,24 @@ public class CrearArchivo {
     }
 
     protected String escribirRuta(String nombre) {
-        String r = "../GeneradorLectorTXT/src/Salidas/" + nombre + "_FrmAnalizador.txt";
+        String r = "../GeneradorLectorTXT/src/Salidas/" + nombre + "_FrmAnalizadorOP.txt";
         return r;
     }
 
     protected void escribirSentencia() {
+        Pair<String,String> pareja;
+        ArrayList<Pair> parejas = new ArrayList<Pair>();
+        String[] aux;
         for (int i = 0; i < conte.length; i++) {
-            contenido += "case " + conte[i] + ":\n"
-                    + "resultado += \" <Reservada " + conte[i].toLowerCase() + ">\\t\" + lexicos.lexemas + \"\\n\";\n"
-                    + "break;\n";
+            aux = conte[i].split(",");
+            pareja = new Pair<String,String>(aux[0],aux[1]);
+            parejas.add(pareja);
+            
+        }
+        
+        for (int j = 0; j < parejas.size(); j++) {
+            contenido += "/* Operador logico " + parejas.get(j).getValue() + " */\n"
+                    + "( \"" + parejas.get(j).getKey() + "\" ) {lexemas=yytext(); return " + parejas.get(j).getValue() + ";}\n\n";
         }
     }
 

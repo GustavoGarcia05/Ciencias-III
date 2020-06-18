@@ -9,7 +9,7 @@ package Modelo;
  *
  * @author Gustavo
  */
-public class CrearArchivoLex extends CrearArchivo {
+public class CrearArchivoLex extends CrearArchivoFrm {
 
     public CrearArchivoLex(String nombre, String[] texto) {
         super(nombre, texto);
