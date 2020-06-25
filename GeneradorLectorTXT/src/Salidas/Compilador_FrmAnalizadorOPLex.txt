@@ -1,0 +1,12 @@
+/* Operador Incremento unitario */
+( "++" ) {lexemas=yytext(); return Incremento_unitario;}
+
+/* Operador Decremento unitario */
+( "--" ) {lexemas=yytext(); return Decremento_unitario;}
+
+/* Operador Boleano true */
+( "true" ) {lexemas=yytext(); return Boleano_true;}
+
+/* Operador Boleano false */
+( "false" ) {lexemas=yytext(); return Boleano_false;}
+

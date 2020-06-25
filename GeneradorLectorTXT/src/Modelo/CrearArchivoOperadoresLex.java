@@ -57,25 +57,21 @@ public class CrearArchivoOperadoresLex {
     }
 
     protected String escribirRuta(String nombre) {
-        String r = "../GeneradorLectorTXT/src/Salidas/" + nombre + "_FrmAnalizadorOP.txt";
+        String r = "../GeneradorLectorTXT/src/Salidas/" + nombre + "_FrmAnalizadorOPLex.txt";
         return r;
     }
 
     protected void escribirSentencia() {
-        Pair<String,String> pareja;
-        ArrayList<Pair> parejas = new ArrayList<Pair>();
+
         String[] aux;
         for (int i = 0; i < conte.length; i++) {
             aux = conte[i].split(",");
-            pareja = new Pair<String,String>(aux[0],aux[1]);
-            parejas.add(pareja);
+
+            contenido += "/* Operador " + aux[1].replace("_", " ") + " */\n"
+                    + "( \"" + aux[0] + "\" ) {lexemas=yytext(); return " + aux[1] + ";}\n\n";
             
         }
         
-        for (int j = 0; j < parejas.size(); j++) {
-            contenido += "/* Operador logico " + parejas.get(j).getValue() + " */\n"
-                    + "( \"" + parejas.get(j).getKey() + "\" ) {lexemas=yytext(); return " + parejas.get(j).getValue() + ";}\n\n";
-        }
     }
 
 }

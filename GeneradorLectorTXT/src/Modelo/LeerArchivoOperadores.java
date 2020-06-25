@@ -5,9 +5,6 @@
  */
 package Modelo;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-
 /**
  *
  * @author Gustavo
@@ -26,12 +23,11 @@ public class LeerArchivoOperadores extends LeerArchivo{
             System.out.println("no existen textos ");
             return null;
         }
-        System.out.println("texto: "+texto);
+           // System.out.println("texto: "+texto);
         palabrasSepardas = texto.split(" ");
-        //System.out.println("palabaras"+palabrasSepardas[0]);
         for (int i = 0; i < palabrasSepardas.length; i++) {
             palabrasSepardas[i]=palabrasSepardas[i].replaceAll(" ", "");// remplaza el espacio por uno sin espacio
-            System.out.println(palabrasSepardas[i]);
+            //System.out.println(palabrasSepardas[i]);
         }
         return palabrasSepardas;
     }

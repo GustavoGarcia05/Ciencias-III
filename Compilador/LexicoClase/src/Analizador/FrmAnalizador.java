@@ -43,6 +43,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
         txtAnalizarLex = new javax.swing.JTextArea();
         btnArchivo = new javax.swing.JButton();
         Borrar1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,6 +79,14 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,7 +95,8 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -107,7 +117,10 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     .addComponent(btnArchivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(150, Short.MAX_VALUE))
         );
@@ -381,6 +394,57 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case O_Logico_Bit:
                     resultado += "  <Operador logico o_logico_bit>\t" + lexicos.lexemas + "\n";
                     break;
+                case Menor_que:
+                    resultado += "  <Operador relacional menor que>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Mayor_que:
+                    resultado += "  <Operador relacional mayor que>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Igual_a:
+                    resultado += "  <Operador relacional igual a>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Diferente_de:
+                    resultado += "  <Operador relacional diferente de>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Mayor_o_igual_que:
+                    resultado += "  <Operador relacional mayor o igual que>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Menor_o_igual_que:
+                    resultado += "  <Operador relacional menor o igual que>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Desplazar_a_derecha:
+                    resultado += "  <Operador de bit desplazar a derecha>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Desplazar_a_izquierda:
+                    resultado += "  <Operador de bit desplazar a izquierda>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Asignacion_suma:
+                    resultado += "  <Operador atribucion asignacion suma>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Asignacion_resta:
+                    resultado += "  <Operador atribucion asignacion resta>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Asignacion_multiplicacion:
+                    resultado += "  <Operador atribucion asignacion multiplicacion>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Asignacion_division:
+                    resultado += "  <Operador atribucion asignacion division>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Asignacion_modulo:
+                    resultado += "  <Operador atribucion asignacion modulo>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Incremento_unitario:
+                    resultado += "  <Operador incremento unitario>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Decremento_unitario:
+                    resultado += "  <Operador decremento unitario>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Boleano_true:
+                    resultado += "  <Operador boleano true>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Boleano_false:
+                    resultado += "  <Operador boleano false>\t" + lexicos.lexemas + "\n";
+                    break;
                 case Op_incremento:
                     resultado += "  <Operador incremento>\t" + lexicos.lexemas + "\n";
                     break;
@@ -465,6 +529,11 @@ public class FrmAnalizador extends javax.swing.JFrame {
         txtAnalizarLex.setText(null);
     }//GEN-LAST:event_Borrar1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -505,6 +574,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
     private javax.swing.JButton BotonAnalisis;
     private javax.swing.JTextArea Resultado;
     private javax.swing.JButton btnArchivo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea txtAnalizarLex;

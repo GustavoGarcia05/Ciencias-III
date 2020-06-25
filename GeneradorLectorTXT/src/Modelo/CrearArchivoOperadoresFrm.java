@@ -57,7 +57,7 @@ public class CrearArchivoOperadoresFrm {
         for (int i = 0; i < conte.length; i++) {
             aux=conte[i].split(",");
             contenido += "case " + aux[1] + ":\n"
-                    + "resultado += \"  <Operador logico " + aux[1].toLowerCase() + ">\\t\" + lexicos.lexemas + \"\\n\";\n"
+                    + "resultado += \"  <Operador " + aux[1].toLowerCase().replace("_", " ") + ">\\t\" + lexicos.lexemas + \"\\n\";\n"
                     + "break;\n";
         }
     }

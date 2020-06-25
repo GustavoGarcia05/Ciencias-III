@@ -256,11 +256,8 @@ espacio=[ ,\t,\r]+
 ( "/" ) {lexemas=yytext(); return Division;}
 
 
-
 /* Operador Y_Logico */
 ( "&&" ) {lexemas=yytext(); return Y_Logico;}
-
-
 
 /* Operador logico O_Logico */
 ( "||" ) {lexemas=yytext(); return O_Logico;}
@@ -274,17 +271,56 @@ espacio=[ ,\t,\r]+
 /* Operador logico O_Logico_Bit */
 ( "|" ) {lexemas=yytext(); return O_Logico_Bit;}
 
-/*Operadores Relacionales */
-( ">" | "<" | "==" | "!=" | ">=" | "<=" | "<<" | ">>" ) {lexemas = yytext(); return Op_relacional;}
+/* Operador relacional Menor que */
+( ">" ) {lexemas=yytext(); return Menor_que;}
 
-/* Operadores Atribucion */
-( "+=" | "-="  | "*=" | "/=" | "%=" ) {lexemas = yytext(); return Op_atribucion;}
+/* Operador relacional Mayor que */
+( "<" ) {lexemas=yytext(); return Mayor_que;}
 
-/* Operadores Incremento y decremento */
-( "++" | "--" ) {lexemas = yytext(); return Op_incremento;}
+/* Operador relacional Igual a */
+( "==" ) {lexemas=yytext(); return Igual_a;}
 
-/*Operadores Booleanos*/
-(true | false)      {lexemas = yytext(); return Op_booleano;}
+/* Operador relacional Diferente de */
+( "!=" ) {lexemas=yytext(); return Diferente_de;}
+
+/* Operador relacional Mayor o igual que */
+( ">=" ) {lexemas=yytext(); return Mayor_o_igual_que;}
+
+/* Operador relacional Menor o igual que */
+( "<=" ) {lexemas=yytext(); return Menor_o_igual_que;}
+
+/* Operador de bit Desplazar a derecha */
+( ">>" ) {lexemas=yytext(); return Desplazar_a_derecha;}
+
+/* Operador de bit Desplazar a izquierda */
+( "<<" ) {lexemas=yytext(); return Desplazar_a_izquierda;}
+
+/* Operador atribucion Asignacion suma */
+( "+=" ) {lexemas=yytext(); return Asignacion_suma;}
+
+/* Operador atribucion Asignacion resta */
+( "-=" ) {lexemas=yytext(); return Asignacion_resta;}
+
+/* Operador atribucion Asignacion multiplicacion */
+( "*=" ) {lexemas=yytext(); return Asignacion_multiplicacion;}
+
+/* Operador atribucion Asignacion division */
+( "/=" ) {lexemas=yytext(); return Asignacion_division;}
+
+/* Operador atribucion Asignacion modulo */
+( "%=" ) {lexemas=yytext(); return Asignacion_modulo;}
+
+/* Operador Incremento unitario */
+( "++" ) {lexemas=yytext(); return Incremento_unitario;}
+
+/* Operador Decremento unitario */
+( "--" ) {lexemas=yytext(); return Decremento_unitario;}
+
+/* Operador Boleano true */
+( true ) {lexemas=yytext(); return Boleano_true;}
+
+/* Operador Boleano false */
+( false ) {lexemas=yytext(); return Boleano_false;}
 
 /* Parentesis de apertura */
 ( "(" ) {lexemas=yytext(); return Parentesis_a;}
