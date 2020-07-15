@@ -77,7 +77,6 @@ public enum Tokens {
     Virtual,
     Volatile,
     Void,
-    //
     Switch,
     Case,
     Break,
@@ -108,17 +107,10 @@ public enum Tokens {
     Asignacion_multiplicacion,
     Asignacion_division,
     Asignacion_modulo,
-    //
     Incremento_unitario,
     Decremento_unitario,
     Boleano_true,
     Boleano_false,
-    //
-    Op_logico,
-    Op_incremento,
-    Op_relacional,
-    Op_atribucion,
-    Op_booleano,
     Parentesis_a,
     Parentesis_c,
     Llave_a,

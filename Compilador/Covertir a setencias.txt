@@ -1,0 +1,11 @@
+Op_logico, 
+Op_relacional,
+Op_atribucion, 
+Op_incremento, 
+Op_booleano,
+
+OP_LOGICO
+OP_RELACIONAL
+OP_ATRIBUCION
+OP_INCREMENTO
+OP_BOOLEANO
