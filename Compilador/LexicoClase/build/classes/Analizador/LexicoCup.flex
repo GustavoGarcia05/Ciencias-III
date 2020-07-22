@@ -247,6 +247,9 @@ espacio=[ ,\t,\r,\n]+
 /* Palabra reservada For */
 ( for ) {return new Symbol(sym.For, yychar, yyline, yytext());}
 
+/* Operador Dos Puntos */
+( ":" ) {return new Symbol(sym.Dos_puntos, yychar, yyline, yytext());}
+
 /* Operador Igual */
 ( "=" ) {return new Symbol(sym.Igual, yychar, yyline, yytext());}
 

@@ -420,7 +420,10 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     resultado += "  <Reservada while>\t" + lexicos.lexemas + "\n";
                     break;
                 case For:
-                    resultado += "  <Reservada while>\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Reservada for>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Dos_puntos:
+                    resultado += "  <Operador dos_puntos>\t" + lexicos.lexemas + "\n";
                     break;
                 case Igual:
                     resultado += "  <Operador igual>\t" + lexicos.lexemas + "\n";

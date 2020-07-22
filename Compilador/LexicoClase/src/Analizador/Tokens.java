@@ -84,6 +84,7 @@ public enum Tokens {
     Do,
     While,
     For,
+    Dos_puntos,
     Igual,
     Suma,
     Resta,

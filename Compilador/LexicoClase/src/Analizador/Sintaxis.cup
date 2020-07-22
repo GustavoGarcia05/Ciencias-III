@@ -21,7 +21,7 @@ terminal Int, Linea, Comillas, T_dato, Cadena, If, Else, Abstract, As, Base,
         Internal, Is, Lock, Namespace,New, Null, Object, Operator, Out, Override, Params, 
         Private, Protected, Public, Readonly, Ref, Return, Sbyte, Sealed, Sizeof, Stackalloc, 
         Statict, Struct, This, Throw, Try, Typeof, Uint, Ulong, Unchecked, Unsafe, Ushort, 
-        Using, Virtual, Volatile, Void, Switch, Case, Break, Continue, Do, While, For, Igual, 
+        Using, Virtual, Volatile, Void, Switch, Case, Break, Continue, Do, While, For, Dos_puntos, Igual, 
         Suma, Resta, Multiplicacion, Division, Y_Logico, O_Logico, Negacion, Y_Logico_Bit, 
         O_Logico_Bit, Menor_que, Mayor_que, Igual_a, Diferente_de, Mayor_o_igual_que, 
         Menor_o_igual_que, Desplazar_a_derecha, Desplazar_a_izquierda, Asignacion_suma, 
@@ -33,7 +33,7 @@ terminal Int, Linea, Comillas, T_dato, Cadena, If, Else, Abstract, As, Base,
 
 non terminal INICIO, SENTENCIA, DECLARACION, DECLARACION_FOR, IF, IF_ELSE,
     WHILE, DO_WHILE, FOR, SENTENCIA_BOOLEANA, SENTENCIA_FOR, OP_LOGICO, OP_RELACIONAL, 
-    OP_ATRIBUCION, OP_INCREMENTO, OP_BOOLEANO;
+    OP_ATRIBUCION, OP_INCREMENTO, OP_BOOLEANO, SWITCH_CASE, SENTENCIA_CASE;
 
 start with INICIO;
 
@@ -93,7 +93,8 @@ SENTENCIA ::=
     SENTENCIA DO_WHILE
     DO_WHILE |
     SENTENCIA FOR |
-    FOR
+    FOR |
+    SWITCH_CASE
 ;
 DECLARACION ::= 
     T_dato Identificador P_coma | 
@@ -135,3 +136,16 @@ DECLARACION_FOR ::=
     Identificador OP_INCREMENTO | 
     OP_INCREMENTO Identificador
 ;
+
+SWITCH_CASE ::= Switch Parentesis_a Identificador Parentesis_c Llave_a SENTENCIA_CASE Llave_c 
+;
+
+SENTENCIA_CASE ::=
+    Case Identificador Dos_puntos SENTENCIA Break P_coma | 
+    Case Numero Dos_puntos SENTENCIA Break P_coma |  
+    Default Dos_puntos |
+    Case Identificador Dos_puntos SENTENCIA Break P_coma SENTENCIA_CASE | 
+    Case Numero Dos_puntos SENTENCIA Break P_coma SENTENCIA_CASE  
+;
+
+

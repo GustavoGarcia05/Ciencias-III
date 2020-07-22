@@ -5,6 +5,9 @@
         <group>
             <file>file:/C:/Users/danny/Desktop/Ciencias-III/Compilador/LexicoClase/src/Analizador/Sintaxis.cup</file>
             <file>file:/C:/Users/danny/Desktop/Ciencias-III/Compilador/LexicoClase/src/Analizador/Tokens.java</file>
+            <file>file:/C:/Users/danny/Desktop/Ciencias-III/Compilador/LexicoClase/src/Analizador/FrmAnalizador.java</file>
+            <file>file:/C:/Users/danny/Desktop/Ciencias-III/Compilador/LexicoClase/src/Analizador/LexicoCup.flex</file>
+            <file>file:/C:/Users/danny/Desktop/Ciencias-III/Compilador/LexicoClase/src/Analizador/Sintaxis.java</file>
             <file>file:/C:/Users/danny/Desktop/Ciencias-III/Compilador/LexicoClase/src/Analizador/Lexico.flex</file>
         </group>
     </open-files>

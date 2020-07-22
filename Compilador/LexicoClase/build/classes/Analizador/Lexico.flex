@@ -217,8 +217,6 @@ espacio=[ ,\t,\r]+
 /* Palabra reservada  Void*/
 ( void ) {lexemas=yytext(); return Void;}
 
-
-
 /* Palabra reservada Switch */
 ( switch ) {lexemas=yytext(); return Switch;}
 
@@ -240,6 +238,9 @@ espacio=[ ,\t,\r]+
 /* Palabra reservada For */
 ( for ) {lexemas=yytext(); return For;}
 
+/* Operador Dos Puntos */
+( ":" ) {lexemas=yytext(); return Dos_puntos;}
+
 /* Operador Igual */
 ( "=" ) {lexemas=yytext(); return Igual;}
 
@@ -254,7 +255,6 @@ espacio=[ ,\t,\r]+
 
 /* Operador Division */
 ( "/" ) {lexemas=yytext(); return Division;}
-
 
 /* Operador Y_Logico */
 ( "&&" ) {lexemas=yytext(); return Y_Logico;}
