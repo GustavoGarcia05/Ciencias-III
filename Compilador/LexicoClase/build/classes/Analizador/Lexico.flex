@@ -238,6 +238,12 @@ espacio=[ ,\t,\r]+
 /* Palabra reservada For */
 ( for ) {lexemas=yytext(); return For;}
 
+/* Palabra reservada Incluir */
+( #include ) {lexemas=yytext(); return Incluir;}
+
+/* Palabra reservada Include */
+( include ) {lexemas=yytext(); return Include;}
+
 /* Operador Dos Puntos */
 ( ":" ) {lexemas=yytext(); return Dos_puntos;}
 
@@ -348,6 +354,9 @@ espacio=[ ,\t,\r]+
 
 /* Punto y coma */
 ( ";" ) {lexemas=yytext(); return P_coma;}
+
+/* Numeral */
+( "#" ) {lexemas=yytext(); return Numeral;}
 
 /* Punto */
 ( "." ) {lexemas=yytext(); return Punto;}

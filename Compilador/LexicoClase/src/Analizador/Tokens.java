@@ -84,6 +84,8 @@ public enum Tokens {
     Do,
     While,
     For,
+    Include,
+    Incluir,
     Dos_puntos,
     Igual,
     Suma,
@@ -122,6 +124,7 @@ public enum Tokens {
     Printf,
     P_coma,
     Punto,
+    Numeral,
     Identificador,
     Numero,
     ERROR

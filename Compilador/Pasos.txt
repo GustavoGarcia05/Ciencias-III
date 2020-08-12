@@ -1,0 +1,25 @@
+Generador de archivo intermedio
+cpp Prueba.cpp  > Prueba.i
+exit
+*******************************
+Generar assembler
+g++ -Wall -S Prueba.i
+exit
+*******************************
+Generador de archivo binario a partir de un archivo en assembler Creaci�n de obj
+as Prueba.s -o Prueba.o
+exit
+*******************************
+Generaci�n de archivo ejecutable 
+gcc Prueba.o -o Prueba
+g++ Prueba.o -o Prueba
+exit
+*******************************
+Ejecutar programa compilado
+start Prueba
+exit
+*******************************
+masm archivo.o archivo.exe
+tasm archivo.o archivo.exe
+
+Cargar estos pasos y los documentos que sirvan para desarrollar la actividad.

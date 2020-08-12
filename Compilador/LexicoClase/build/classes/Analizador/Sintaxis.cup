@@ -21,22 +21,30 @@ terminal Int, Linea, Comillas, T_dato, Cadena, If, Else, Abstract, As, Base,
         Internal, Is, Lock, Namespace,New, Null, Object, Operator, Out, Override, Params, 
         Private, Protected, Public, Readonly, Ref, Return, Sbyte, Sealed, Sizeof, Stackalloc, 
         Statict, Struct, This, Throw, Try, Typeof, Uint, Ulong, Unchecked, Unsafe, Ushort, 
-        Using, Virtual, Volatile, Void, Switch, Case, Break, Continue, Do, While, For, Dos_puntos, Igual, 
+        Using, Virtual, Volatile, Void, Switch, Case, Break, Continue, Do, While, For, Include,
+        Incluir, Dos_puntos, Igual, 
         Suma, Resta, Multiplicacion, Division, Y_Logico, O_Logico, Negacion, Y_Logico_Bit, 
         O_Logico_Bit, Menor_que, Mayor_que, Igual_a, Diferente_de, Mayor_o_igual_que, 
         Menor_o_igual_que, Desplazar_a_derecha, Desplazar_a_izquierda, Asignacion_suma, 
         Asignacion_resta, Asignacion_multiplicacion, Asignacion_division, Asignacion_modulo, 
         Incremento_unitario, Decremento_unitario, Boleano_true, Boleano_false, Op_logico, 
         Op_incremento, Op_relacional, Op_atribucion, Op_booleano, Parentesis_a, Parentesis_c, 
-        Llave_a, Llave_c, Corchete_a, Corchete_c, Main, Printf, P_coma, Punto, Identificador, 
+        Llave_a, Llave_c, Corchete_a, Corchete_c, Main, Printf, P_coma, Punto,Numeral, Identificador, 
         Numero, ERROR;
 
 non terminal INICIO, SENTENCIA, DECLARACION, DECLARACION_FOR, IF, IF_ELSE,
     WHILE, DO_WHILE, FOR, SENTENCIA_BOOLEANA, SENTENCIA_FOR, OP_LOGICO, OP_RELACIONAL, 
-    OP_ATRIBUCION, OP_INCREMENTO, OP_BOOLEANO, SWITCH_CASE, SENTENCIA_CASE;
+    OP_ATRIBUCION, OP_INCREMENTO, OP_BOOLEANO, SWITCH_CASE, SENTENCIA_CASE, BIBLIOTECA;
 
 start with INICIO;
 
+BIBLIOTECA::=
+    Incluir Menor_que Identificador Punto Identificador Mayor_que |
+    Incluir Menor_que Identificador Mayor_que |
+    Incluir Menor_que Identificador Punto Identificador Mayor_que BIBLIOTECA|
+    Incluir Menor_que Identificador Mayor_que BIBLIOTECA
+
+;
 OP_LOGICO ::=
     Y_Logico |
     O_Logico |
@@ -79,7 +87,9 @@ OP_BOOLEANO ::=
 
 INICIO ::= 
     Int Main Parentesis_a Parentesis_c Llave_a SENTENCIA Llave_c |
-    Main Parentesis_a Parentesis_c Llave_a SENTENCIA Llave_c
+    Main Parentesis_a Parentesis_c Llave_a SENTENCIA Llave_c |
+    BIBLIOTECA Int Main Parentesis_a Parentesis_c Llave_a SENTENCIA Llave_c |
+    BIBLIOTECA Main Parentesis_a Parentesis_c Llave_a SENTENCIA Llave_c
 ;
 SENTENCIA ::= 
     SENTENCIA DECLARACION |

@@ -247,6 +247,12 @@ espacio=[ ,\t,\r,\n]+
 /* Palabra reservada For */
 ( for ) {return new Symbol(sym.For, yychar, yyline, yytext());}
 
+/* Palabra reservada Incluir */
+( #include ) {return new Symbol(sym.Incluir, yychar, yyline, yytext());}
+
+/* Palabra reservada Include */
+( include ) {return new Symbol(sym.Include, yychar, yyline, yytext());}
+
 /* Operador Dos Puntos */
 ( ":" ) {return new Symbol(sym.Dos_puntos, yychar, yyline, yytext());}
 
@@ -360,6 +366,9 @@ espacio=[ ,\t,\r,\n]+
 
 /* Punto */
 ( "." ) {return new Symbol(sym.Punto, yychar, yyline, yytext());}
+
+/* Numeral */
+( "#" ) {return new Symbol(sym.Numeral, yychar, yyline, yytext());}
 
 /* Numero */
 ("(-"{D}+")")|{D}+ {return new Symbol(sym.Numero, yychar, yyline, yytext());}

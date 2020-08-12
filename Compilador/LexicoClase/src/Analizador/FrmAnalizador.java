@@ -5,6 +5,7 @@
  */
 package Analizador;
 
+import com.sun.webkit.PageCache;
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,6 +20,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java_cup.runtime.Symbol;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.SpringLayout;
 
 /**
  *
@@ -53,8 +56,11 @@ public class FrmAnalizador extends javax.swing.JFrame {
         txtAnalizarSin = new javax.swing.JTextArea();
         Borrar1 = new javax.swing.JButton();
         Borrar2 = new javax.swing.JButton();
-        GenEjecutable = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jBtEjecutable = new javax.swing.JButton();
+        jBtEjecutar = new javax.swing.JToggleButton();
+        jBtIntermedio = new javax.swing.JButton();
+        jBtAssembler = new javax.swing.JButton();
+        jBtObjeto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,19 +116,43 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
 
-        GenEjecutable.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        GenEjecutable.setText("Generar Ejecutable");
-        GenEjecutable.addActionListener(new java.awt.event.ActionListener() {
+        jBtEjecutable.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jBtEjecutable.setText("4 G Ejecutable");
+        jBtEjecutable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GenEjecutableActionPerformed(evt);
+                jBtEjecutableActionPerformed(evt);
             }
         });
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jToggleButton1.setText("Ejecutable");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBtEjecutar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jBtEjecutar.setText("5 Ejecutar");
+        jBtEjecutar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                jBtEjecutarActionPerformed(evt);
+            }
+        });
+
+        jBtIntermedio.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jBtIntermedio.setText("1 G Intermedio");
+        jBtIntermedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtIntermedioActionPerformed(evt);
+            }
+        });
+
+        jBtAssembler.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jBtAssembler.setText("2 G Assembler");
+        jBtAssembler.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtAssemblerActionPerformed(evt);
+            }
+        });
+
+        jBtObjeto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jBtObjeto.setText("3 G Objeto");
+        jBtObjeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtObjetoActionPerformed(evt);
             }
         });
 
@@ -130,14 +160,9 @@ public class FrmAnalizador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(GenEjecutable, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -154,7 +179,20 @@ public class FrmAnalizador extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                                 .addComponent(Borrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2))
-                        .addGap(73, 73, 73))))
+                        .addGap(73, 73, 73))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBtIntermedio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtAssembler, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBtObjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBtEjecutable, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jBtEjecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(312, 312, 312))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,9 +216,14 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(GenEjecutable, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(93, 93, 93))
+                    .addComponent(jBtObjeto, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(jBtIntermedio, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(jBtAssembler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtEjecutable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtEjecutar, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -422,6 +465,12 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case For:
                     resultado += "  <Reservada for>\t" + lexicos.lexemas + "\n";
                     break;
+                case Include:
+                    resultado += "  <Reservada Include>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Incluir:
+                    resultado += "  <Reservada #Incluir>\t" + lexicos.lexemas + "\n";
+                    break;
                 case Dos_puntos:
                     resultado += "  <Operador dos_puntos>\t" + lexicos.lexemas + "\n";
                     break;
@@ -533,6 +582,9 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case Punto:
                     resultado += "  <Punto>\t\t" + lexicos.lexemas + "\n";
                     break;
+                case Numeral:
+                    resultado += "  <Numeral>\t\t" + lexicos.lexemas + "\n";
+                    break;
                 case Identificador:
                     resultado += "  <Identificador>\t\t" + lexicos.lexemas + "\n";
                     break;
@@ -566,7 +618,9 @@ public class FrmAnalizador extends javax.swing.JFrame {
         int cont = 1;
         JFileChooser escoger = new JFileChooser();
         escoger.showOpenDialog(null);
+        
         File arc = new File(escoger.getSelectedFile().getAbsolutePath());
+        //File arc = new File(escoger.getSelectedFile().getAbsolutePath());
 
         try {
             String ST = new String(Files.readAllBytes(arc.toPath()));
@@ -597,12 +651,80 @@ public class FrmAnalizador extends javax.swing.JFrame {
         txtAnalizarLex.setText(null);
     }//GEN-LAST:event_Borrar1ActionPerformed
 
-    private void GenEjecutableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenEjecutableActionPerformed
-    }//GEN-LAST:event_GenEjecutableActionPerformed
+    private void jBtEjecutableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtEjecutableActionPerformed
+        try {
+            File f = new File("./Prueba.o");
+            if (f.exists()) {
+                String[] comando = {"../Archivos_bat/ejecutable.bat"};
+                Runtime.getRuntime().exec(comando);
+            } else {
+                JOptionPane.showMessageDialog(null, "Falta el archivo .o");
+            }
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jBtEjecutableActionPerformed
 
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void jBtEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtEjecutarActionPerformed
+        try {
+            File f = new File("./Prueba.exe");
+            if (f.exists()) {
+                System.out.println(f.getName());
+                String[] comando = {"../Archivos_bat/ejecutar.bat"};
+                Runtime.getRuntime().exec(comando);
+            } else {
+                JOptionPane.showMessageDialog(null, "Falta el archivo .exe");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jBtEjecutarActionPerformed
+
+    private void jBtIntermedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtIntermedioActionPerformed
+        try {
+            File f = new File("./Prueba.cpp");
+            if (f.exists()) {
+                String[] comando = {"../Archivos_bat/intermedio.bat"};
+                Runtime.getRuntime().exec(comando);
+            } else {
+                JOptionPane.showMessageDialog(null, "Falta el archivo .cpp");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jBtIntermedioActionPerformed
+
+    private void jBtAssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtAssemblerActionPerformed
+        try {
+            File f = new File("./Prueba.i");
+            if (f.exists()) {
+                String[] comando = {"../Archivos_bat/assembler.bat"};
+                Runtime.getRuntime().exec(comando);
+            } else {
+                JOptionPane.showMessageDialog(null, "Falta el archivo .i");
+            }
+
+        } catch (IOException ex) {
+            Logger.getLogger(FrmAnalizador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jBtAssemblerActionPerformed
+
+    private void jBtObjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtObjetoActionPerformed
+        try {
+            File f = new File("./Prueba.s");
+            if (f.exists()) {
+                String[] comando = {"../Archivos_bat/objeto.bat"};
+                Runtime.getRuntime().exec(comando);
+            } else {
+                JOptionPane.showMessageDialog(null, "Falta el archivo .s");
+            }
+
+        } catch (IOException ex) {
+            Logger.getLogger(FrmAnalizador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jBtObjetoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -644,13 +766,16 @@ public class FrmAnalizador extends javax.swing.JFrame {
     private javax.swing.JButton Borrar2;
     private javax.swing.JButton BotonAnalisis;
     private javax.swing.JButton BotonSintactico;
-    private javax.swing.JButton GenEjecutable;
     private javax.swing.JTextArea Resultado;
     private javax.swing.JButton btnArchivo;
+    private javax.swing.JButton jBtAssembler;
+    private javax.swing.JButton jBtEjecutable;
+    private javax.swing.JToggleButton jBtEjecutar;
+    private javax.swing.JButton jBtIntermedio;
+    private javax.swing.JButton jBtObjeto;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextArea txtAnalizarLex;
     private javax.swing.JTextArea txtAnalizarSin;
     // End of variables declaration//GEN-END:variables
