@@ -616,11 +616,10 @@ public class FrmAnalizador extends javax.swing.JFrame {
 
     private void btnArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArchivoActionPerformed
         int cont = 1;
-        JFileChooser escoger = new JFileChooser();
+        JFileChooser escoger = new JFileChooser("./");
         escoger.showOpenDialog(null);
-        
+
         File arc = new File(escoger.getSelectedFile().getAbsolutePath());
-        //File arc = new File(escoger.getSelectedFile().getAbsolutePath());
 
         try {
             String ST = new String(Files.readAllBytes(arc.toPath()));
@@ -631,19 +630,39 @@ public class FrmAnalizador extends javax.swing.JFrame {
             Logger.getLogger(FrmAnalizador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnArchivoActionPerformed
+    private boolean hayError = true;
 
     private void BotonSintacticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSintacticoActionPerformed
         String ST = Resultado.getText();
         Sintaxis s = new Sintaxis(new Analizador.LexicoCup(new StringReader(ST)));
+        System.out.println(Resultado.getText());
 
         try {
+
             s.parse();
-            txtAnalizarSin.setText("Analisis realizado correctamente");
-            txtAnalizarSin.setForeground(new Color(25, 111, 61));
-        } catch (Exception ex) {
             Symbol sym = s.getS();
             txtAnalizarSin.setText("Error de sintaxis. Linea: " + (sym.right + 1) + " Columna: " + (sym.left + 1) + ", Texto: \"" + sym.value + "\"");
             txtAnalizarSin.setForeground(Color.red);
+            hayError = true;
+            //txtAnalizarSin.setText("Analisis realizado correctamente");
+            //txtAnalizarSin.setForeground(new Color(25, 111, 61));
+        } catch (Exception ex) {
+            if (ST.equals("")) {
+                Symbol sym = s.getS();
+                txtAnalizarSin.setText("Error de sintaxis. Linea: " + (sym.right + 1) + " Columna: " + (sym.left + 1) + ", Texto: \"" + sym.value + "\"");
+                txtAnalizarSin.setForeground(Color.red);
+                hayError = true;
+
+            } else {
+
+                txtAnalizarSin.setText("Analisis realizado correctamente");
+                txtAnalizarSin.setForeground(new Color(25, 111, 61));
+                hayError = false;
+            }
+
+            //Symbol sym = s.getS();
+            //txtAnalizarSin.setText("Error de sintaxis. Linea: " + (sym.right + 1) + " Columna: " + (sym.left + 1) + ", Texto: \"" + sym.value + "\"");
+            //txtAnalizarSin.setForeground(Color.red);
         }
     }//GEN-LAST:event_BotonSintacticoActionPerformed
 
@@ -683,12 +702,17 @@ public class FrmAnalizador extends javax.swing.JFrame {
 
     private void jBtIntermedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtIntermedioActionPerformed
         try {
-            File f = new File("./Prueba.cpp");
-            if (f.exists()) {
-                String[] comando = {"../Archivos_bat/intermedio.bat"};
-                Runtime.getRuntime().exec(comando);
+            if (hayError == false) {
+                File f = new File("./Prueba.cpp");
+                if (f.exists()) {
+                    String[] comando = {"../Archivos_bat/intermedio.bat"};
+                    Runtime.getRuntime().exec(comando);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Falta el archivo .cpp");
+                }
+
             } else {
-                JOptionPane.showMessageDialog(null, "Falta el archivo .cpp");
+                JOptionPane.showMessageDialog(null, "Existen errores de sintaxis");
             }
 
         } catch (Exception e) {
